@@ -1,0 +1,8 @@
+{
+  "name": "Remix PROJECT X",
+  "description": "Philippine Retail Market Intelligence and price architecture platform for FMCG categories, brand benchmarks, and economic analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

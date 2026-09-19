@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --color-canvas: #FAFAF7;
+    --color-canvas-secondary: #F4F5EF;
+    --color-canvas-sage: #EEF4EE;
+    --color-surface: #FFFFFF;
+    --color-ink: #163829;
+    --color-ink-secondary: #3B4840;
+    --color-ink-muted: #4F5751;
+    --color-ink-subtle: #737A74;
+    --color-border: #E3E6DF;
+    --color-border-subtle: #EEF0EA;
+    --color-brand: #176B4D;
+    --color-brand-hover: #13583E;
+    --color-sage: #A8C5B4;
+    --color-pale-sage: #DDEBE1;
+    --color-stone: #E8E7DF;
+    --color-warm-gray: #777A74;
+    --color-medium-gray: #5F625D;
+    
+    --font-ui: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-editorial: 'Instrument Serif', 'Newsreader', Georgia, serif;
+    --font-data: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-ui);
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Only true code elements receive monospace */
+  code, kbd, samp, pre {
+    font-family: var(--font-code);
+  }
+}
+
+/* ==========================================================================
+   1. TYPOGRAPHY SYSTEM (3 DISTINCT LAYERS)
+   ========================================================================== */
+
+/* Layer 1: Editorial & Intelligence Narrative */
+.font-editorial {
+  font-family: var(--font-editorial);
+  letter-spacing: -0.02em;
+}
+
+/* Layer 2: Application UI & Controls */
+.font-ui, .font-sans {
+  font-family: var(--font-ui);
+}
+
+/* Layer 3: Data & Financial Numerics (TABULAR, LINING, PRECISE) */
+.font-data, .font-numeric {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "zero" 1, "cv01" 1, "cv02" 1;
+  letter-spacing: -0.025em;
+}
+
+/* Metric Display Classes */
+.metric-xl {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.metric-lg {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.metric-md {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.metric-cell {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.015em;
+}
+
+/* ==========================================================================
+   2. BACKGROUNDS, GRIDS & SURFACES (LIGHT-FIRST EDITORIAL PALETTE)
+   ========================================================================== */
+
+/* Subtle Technical Analytical Grid (Low-opacity sage/gray on warm white) */
+.bg-grid-subtle {
+  background-color: #FAFAF7;
+  background-image: 
+    linear-gradient(to right, rgba(168, 197, 180, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 197, 180, 0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Atmospheric Hero Atmosphere (White to Pale Sage) */
+.bg-hero-atmosphere {
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, #EEF6F0 0%, #FAFAF7 80%);
+}
+
+/* Atmospheric Light Workspace Tint */
+.bg-atmospheric {
+  background-color: #F7F8F4;
+  background-image: 
+    radial-gradient(ellipse 50% 30% at 90% 10%, rgba(23, 107, 77, 0.035), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 10% 40%, rgba(168, 197, 180, 0.04), transparent 70%);
+}
+
+/* ==========================================================================
+   3. SHADOWS & ELEVATION
+   ========================================================================== */
+
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(22, 56, 41, 0.04), 0 2px 8px rgba(22, 56, 41, 0.02);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 2px 6px rgba(22, 56, 41, 0.06), 0 6px 16px rgba(22, 56, 41, 0.04);
+}
+
+.shadow-floating {
+  box-shadow: 0 10px 25px rgba(22, 56, 41, 0.08), 0 2px 6px rgba(22, 56, 41, 0.03);
+}
+
+/* Clean Professional Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #E3E6DF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8C5B4;
+}
