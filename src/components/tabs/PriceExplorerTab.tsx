@@ -166,8 +166,8 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
         subtitle="Granular database of audited Philippine supermarket products with normalized unit economics (₱/100g), promo flags, and benchmark indices."
         actions={
           <div className="flex items-center gap-2">
-            <span className="text-xs font-sans text-[#6B7280] hidden sm:inline">
-              <span className="font-data tabular-nums font-bold text-[#111318]">{filteredProducts.length}</span> of <span className="font-data tabular-nums">{products.length}</span> SKUs
+            <span className="text-xs font-sans text-[#737A74] hidden sm:inline">
+              <span className="font-data tabular-nums font-bold text-[#163829]">{filteredProducts.length}</span> of <span className="font-data tabular-nums">{products.length}</span> SKUs
             </span>
             <EvidenceBadge status="Observed" size="md" />
           </div>
@@ -175,36 +175,36 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
       />
 
       {/* 2. EDUCATIONAL BANNER */}
-      <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl text-xs text-[#4B5563] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+      <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl text-xs text-[#4F5751] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
         <div className="flex items-start gap-2.5">
-          <Info className="w-4 h-4 text-[#0F5132] shrink-0 mt-0.5" />
-          <p className="leading-relaxed font-normal text-[#4B5563]">
-            <strong className="text-[#111318] font-semibold">The Unit Price Rule:</strong> A ₱200 shelf price is not necessarily more expensive than a ₱150 package.
-            Always evaluate <strong className="text-[#0F5132] font-semibold">Price per 100g</strong> to accurately normalize divergent package sizes (40g to 300g).
+          <Info className="w-4 h-4 text-[#176B4D] shrink-0 mt-0.5" />
+          <p className="leading-relaxed font-normal text-[#4F5751]">
+            <strong className="text-[#163829] font-semibold">The Unit Price Rule:</strong> A ₱200 shelf price is not necessarily more expensive than a ₱150 package.
+            Always evaluate <strong className="text-[#176B4D] font-semibold">Price per 100g</strong> to accurately normalize divergent package sizes (40g to 300g).
           </p>
         </div>
         <LearnTooltip topicKey="unit_price" label="Learn More" />
       </div>
 
       {/* 3. MAIN FILTER & SEARCH BAR */}
-      <div className="bg-white p-5 rounded-xl border border-[#E8E9EC] shadow-card space-y-4">
+      <div className="bg-white p-5 rounded-xl border border-[#E3E6DF] shadow-card space-y-4">
         <div className="flex flex-col md:flex-row items-center gap-3">
           {/* Search Field */}
           <div className="relative flex-1 w-full">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#737A74]" />
             <input
               id="explorer-search-input"
               type="text"
               placeholder="Search toothpaste, brand, or variant (e.g., 'Total', 'Rapid Relief', '150g')..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-9 py-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-xs sm:text-sm text-[#111318] placeholder-[#9CA3AF] focus:outline-none focus:border-[#0F5132] transition-all"
+              className="w-full pl-10 pr-9 py-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-xs sm:text-sm text-[#163829] placeholder-[#737A74] focus:outline-none focus:border-[#176B4D] transition-all"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9CA3AF] hover:text-[#111318] p-1 cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#737A74] hover:text-[#163829] p-1 cursor-pointer"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -213,13 +213,13 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
           {/* View Mode Switcher & Export */}
           <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-end">
-            <div className="flex items-center bg-[#F8F9FB] p-1 rounded-lg border border-[#E8E9EC] text-xs">
+            <div className="flex items-center bg-[#FAFAF7] p-1 rounded-lg border border-[#E3E6DF] text-xs">
               <button
                 type="button"
                 id="view-table-btn"
                 onClick={() => setViewMode('table')}
                 className={`p-1.5 rounded-md flex items-center gap-1 font-medium transition-colors cursor-pointer ${
-                  viewMode === 'table' ? 'bg-[#111318] text-white font-semibold' : 'text-[#6B7280] hover:text-[#111318]'
+                  viewMode === 'table' ? 'bg-[#163829] text-white font-semibold' : 'text-[#737A74] hover:text-[#163829]'
                 }`}
                 title="Table view"
               >
@@ -231,7 +231,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                 id="view-cards-btn"
                 onClick={() => setViewMode('cards')}
                 className={`p-1.5 rounded-md flex items-center gap-1 font-medium transition-colors cursor-pointer ${
-                  viewMode === 'cards' ? 'bg-[#111318] text-white font-semibold' : 'text-[#6B7280] hover:text-[#111318]'
+                  viewMode === 'cards' ? 'bg-[#163829] text-white font-semibold' : 'text-[#737A74] hover:text-[#163829]'
                 }`}
                 title="Card view"
               >
@@ -244,25 +244,25 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
               id="export-filtered-csv-btn"
               type="button"
               onClick={handleExportCSV}
-              className="flex items-center gap-1.5 text-xs text-[#111318] bg-[#F8F9FB] hover:bg-white border border-[#E8E9EC] px-3.5 py-2 rounded-lg transition-colors font-semibold cursor-pointer shadow-xs"
+              className="flex items-center gap-1.5 text-xs text-[#163829] bg-[#FAFAF7] hover:bg-white border border-[#E3E6DF] px-3.5 py-2 rounded-lg transition-colors font-semibold cursor-pointer shadow-2xs"
               title="Download filtered CSV"
             >
-              <Download className="w-3.5 h-3.5 text-[#0F5132]" />
+              <Download className="w-3.5 h-3.5 text-[#176B4D]" />
               <span>Export ({sortedProducts.length})</span>
             </button>
           </div>
         </div>
 
         {/* Multi-faceted Dropdowns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-3 border-t border-[#F1F5F9] text-xs font-sans">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-3 border-t border-[#EEF0EA] text-xs font-sans">
           {/* Brand Filter */}
           <div>
-            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#6B7280] mb-1">Brand</label>
+            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#737A74] mb-1">Brand</label>
             <select
               id="filter-brand"
               value={selectedBrand}
               onChange={(e) => setSelectedBrand(e.target.value)}
-              className="w-full py-1.5 px-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-[#111318] focus:outline-none focus:border-[#0F5132]"
+              className="w-full py-1.5 px-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-[#163829] focus:outline-none focus:border-[#176B4D]"
             >
               <option value="all">All Brands ({brands.length})</option>
               {brands.map((b) => (
@@ -275,12 +275,12 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
           {/* Retailer Filter */}
           <div>
-            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#6B7280] mb-1">Retailer</label>
+            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#737A74] mb-1">Retailer</label>
             <select
               id="filter-retailer"
               value={selectedRetailer}
               onChange={(e) => setSelectedRetailer(e.target.value)}
-              className="w-full py-1.5 px-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-[#111318] focus:outline-none focus:border-[#0F5132]"
+              className="w-full py-1.5 px-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-[#163829] focus:outline-none focus:border-[#176B4D]"
             >
               <option value="all">All Retailers ({retailers.length})</option>
               {retailers.map((r) => (
@@ -293,12 +293,12 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
           {/* Sizing & Packaging */}
           <div>
-            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#6B7280] mb-1">Package Sizing</label>
+            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#737A74] mb-1">Package Sizing</label>
             <select
               id="filter-size"
               value={selectedSizeRange}
               onChange={(e) => setSelectedSizeRange(e.target.value)}
-              className="w-full py-1.5 px-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-[#111318] focus:outline-none focus:border-[#0F5132]"
+              className="w-full py-1.5 px-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-[#163829] focus:outline-none focus:border-[#176B4D]"
             >
               <option value="all">All Sizes</option>
               <option value="small">Small (&le; 100g)</option>
@@ -310,12 +310,12 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
           {/* Attribute Feature */}
           <div>
-            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#6B7280] mb-1">Formulation</label>
+            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#737A74] mb-1">Formulation</label>
             <select
               id="filter-feature"
               value={selectedFeature}
               onChange={(e) => setSelectedFeature(e.target.value)}
-              className="w-full py-1.5 px-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-[#111318] focus:outline-none focus:border-[#0F5132]"
+              className="w-full py-1.5 px-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-[#163829] focus:outline-none focus:border-[#176B4D]"
             >
               <option value="all">All Formulations</option>
               <option value="whitening">Whitening</option>
@@ -329,12 +329,12 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
           {/* Positioning Tier */}
           <div>
-            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#6B7280] mb-1">Positioning Tier</label>
+            <label className="block text-[10px] uppercase tracking-wider font-bold text-[#737A74] mb-1">Positioning Tier</label>
             <select
               id="filter-tier"
               value={selectedTier}
               onChange={(e) => setSelectedTier(e.target.value)}
-              className="w-full py-1.5 px-2.5 bg-[#F8F9FB] border border-[#E8E9EC] rounded-lg text-[#111318] focus:outline-none focus:border-[#0F5132]"
+              className="w-full py-1.5 px-2.5 bg-[#FAFAF7] border border-[#E3E6DF] rounded-lg text-[#163829] focus:outline-none focus:border-[#176B4D]"
             >
               <option value="all">All Tiers</option>
               <option value="Budget">Budget</option>
@@ -352,8 +352,8 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
               onClick={() => setSelectedPromoOnly(!selectedPromoOnly)}
               className={`w-full py-1.5 px-2.5 rounded-lg border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                 selectedPromoOnly
-                  ? 'bg-[#FFFBEB] border-[#FDE68A] text-[#B45309]'
-                  : 'bg-[#F8F9FB] border-[#E8E9EC] text-[#4B5563] hover:bg-white'
+                  ? 'bg-[#FFFDF5] border-[#FEEBB5] text-[#B8860B]'
+                  : 'bg-[#FAFAF7] border-[#E3E6DF] text-[#4F5751] hover:bg-white'
               }`}
             >
               <Tag className="w-3.5 h-3.5" />
@@ -363,14 +363,14 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
         </div>
 
         {/* Active Filter Bar & Reset */}
-        <div className="flex items-center justify-between text-xs text-[#6B7280] pt-1 font-sans">
+        <div className="flex items-center justify-between text-xs text-[#737A74] pt-1 font-sans">
           <div>
-            Showing <strong className="text-[#111318] font-data tabular-nums">{sortedProducts.length}</strong> observed SKUs
+            Showing <strong className="text-[#163829] font-data tabular-nums">{sortedProducts.length}</strong> observed SKUs
           </div>
           {(selectedBrand !== 'all' || selectedRetailer !== 'all' || selectedTier !== 'all' || selectedPromoOnly || selectedFeature !== 'all' || selectedSizeRange !== 'all' || searchQuery) && (
             <button
               onClick={handleResetFilters}
-              className="text-[#0F5132] hover:underline font-semibold cursor-pointer"
+              className="text-[#176B4D] hover:underline font-semibold cursor-pointer"
             >
               Reset all filters
             </button>
@@ -380,16 +380,16 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
       {/* 4. CONTENT VIEW: TABLE OR CARDS */}
       {viewMode === 'table' ? (
-        <div className="bg-white rounded-xl border border-[#E8E9EC] overflow-hidden shadow-card">
+        <div className="bg-white rounded-xl border border-[#E3E6DF] overflow-hidden shadow-card">
           <div className="overflow-x-auto max-h-[720px] overflow-y-auto">
             <table className="w-full text-left text-xs border-collapse">
-              <thead className="sticky top-0 z-20 shadow-xs">
-                <tr className="bg-[#F8F9FB] border-b border-[#E8E9EC] text-[#6B7280] font-sans uppercase tracking-wider text-[10px]">
-                  <th className="py-2.5 px-3 text-center w-10 bg-[#F8F9FB]">Comp</th>
-                  <th className="py-2.5 px-3.5 font-semibold bg-[#F8F9FB]">SKU / Product Line</th>
-                  <th className="py-2.5 px-3 font-semibold bg-[#F8F9FB]">Size</th>
+              <thead className="sticky top-0 z-20 shadow-2xs">
+                <tr className="bg-[#FAFAF7] border-b border-[#E3E6DF] text-[#737A74] font-sans uppercase tracking-wider text-[10px]">
+                  <th className="py-2.5 px-3 text-center w-10 bg-[#FAFAF7]">Comp</th>
+                  <th className="py-2.5 px-3.5 font-semibold bg-[#FAFAF7]">SKU / Product Line</th>
+                  <th className="py-2.5 px-3 font-semibold bg-[#FAFAF7]">Size</th>
                   <th
-                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#111318] bg-[#F8F9FB]"
+                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#163829] bg-[#FAFAF7]"
                     onClick={() => handleSort('price_php')}
                   >
                     <div className="flex items-center justify-end gap-1">
@@ -398,7 +398,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                     </div>
                   </th>
                   <th
-                    className="py-2.5 px-3.5 text-right bg-[#F0FDF4] text-[#0F5132] font-bold cursor-pointer hover:bg-[#DCFCE7] transition-colors border-l border-r border-[#DCFCE7]"
+                    className="py-2.5 px-3.5 text-right bg-[#EEF4EE] text-[#176B4D] font-bold cursor-pointer hover:bg-[#DDEBE1] transition-colors border-l border-r border-[#DDEBE1]"
                     onClick={() => handleSort('price_per_100g')}
                   >
                     <div className="flex items-center justify-end gap-1">
@@ -408,7 +408,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                     </div>
                   </th>
                   <th
-                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#111318] bg-[#F8F9FB]"
+                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#163829] bg-[#FAFAF7]"
                     onClick={() => handleSort('price_index')}
                   >
                     <div className="flex items-center justify-end gap-1">
@@ -418,7 +418,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                     </div>
                   </th>
                   <th
-                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#111318] bg-[#F8F9FB]"
+                    className="py-2.5 px-3.5 text-right font-semibold cursor-pointer hover:text-[#163829] bg-[#FAFAF7]"
                     onClick={() => handleSort('value_score')}
                   >
                     <div className="flex items-center justify-end gap-1">
@@ -427,14 +427,14 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                       {sortField === 'value_score' && (sortAsc ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />)}
                     </div>
                   </th>
-                  <th className="py-2.5 px-3.5 font-semibold bg-[#F8F9FB]">Retailer</th>
-                  <th className="py-2.5 px-3.5 text-center font-semibold bg-[#F8F9FB]">Action</th>
+                  <th className="py-2.5 px-3.5 font-semibold bg-[#FAFAF7]">Retailer</th>
+                  <th className="py-2.5 px-3.5 text-center font-semibold bg-[#FAFAF7]">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#F1F5F9] font-sans">
+              <tbody className="divide-y divide-[#EEF0EA] font-sans">
                 {sortedProducts.length === 0 ? (
                   <tr>
-                    <td colSpan={9} className="py-10 text-center text-[#6B7280]">
+                    <td colSpan={9} className="py-10 text-center text-[#737A74]">
                       No products match current filter criteria.
                     </td>
                   </tr>
@@ -446,8 +446,8 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                     return (
                       <tr
                         key={p.product_id}
-                        className={`hover:bg-[#F8F9FB]/90 transition-colors ${
-                          isSelected ? 'bg-[#F0FDF4]/70' : ''
+                        className={`hover:bg-[#FAFAF7]/90 transition-colors ${
+                          isSelected ? 'bg-[#EEF4EE]/70' : ''
                         }`}
                       >
                         {/* Compare Checkbox */}
@@ -457,7 +457,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                             checked={isSelected}
                             onChange={() => onToggleCompare(p)}
                             title="Add to product comparison"
-                            className="w-4 h-4 rounded border-[#E8E9EC] bg-white text-[#0F5132] focus:ring-[#0F5132] cursor-pointer accent-[#0F5132]"
+                            className="w-4 h-4 rounded border-[#E3E6DF] bg-white text-[#176B4D] focus:ring-[#176B4D] cursor-pointer accent-[#176B4D]"
                           />
                         </td>
 
@@ -467,73 +467,73 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                           onClick={() => onSelectProduct(p)}
                         >
                           <div className="flex items-center gap-1.5 mb-0.5">
-                            <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.2 rounded bg-[#F8F9FB] text-[#111318] border border-[#E8E9EC]">
+                            <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.2 rounded bg-[#FAFAF7] text-[#163829] border border-[#E3E6DF]">
                               {p.brand}
                             </span>
-                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#F8F9FB] text-[#6B7280] border border-[#E8E9EC]">
+                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#FAFAF7] text-[#737A74] border border-[#E3E6DF]">
                               {p.premium_positioning}
                             </span>
                             {p.discount_percent > 0 && (
-                              <span className="text-[10px] font-data font-bold px-1.5 py-0.2 rounded bg-[#FFFBEB] text-[#B45309] border border-[#FDE68A]">
+                              <span className="text-[10px] font-data font-bold px-1.5 py-0.2 rounded bg-[#FFFDF5] text-[#B8860B] border border-[#FEEBB5]">
                                 -{p.discount_percent}%
                               </span>
                             )}
                           </div>
-                          <div className="font-bold text-[#111318] hover:text-[#0F5132] transition-colors truncate text-xs">
+                          <div className="font-bold text-[#163829] hover:text-[#176B4D] transition-colors truncate text-xs">
                             {p.product_name}
                           </div>
-                          <div className="text-[11px] text-[#6B7280] truncate">{p.variant}</div>
+                          <div className="text-[11px] text-[#737A74] truncate">{p.variant}</div>
                         </td>
 
                         {/* Size / Net Wt. */}
                         <td className="py-2.5 px-3">
-                          <div className="font-data tabular-nums text-[#111318] font-medium">
+                          <div className="font-data tabular-nums text-[#163829] font-medium">
                             {p.size_value}
                             {p.size_unit}
                           </div>
                           {p.is_multipack ? (
-                            <span className="text-[10px] font-medium text-[#B45309] bg-[#FFFBEB] border border-[#FDE68A] px-1.5 py-0.2 rounded">
+                            <span className="text-[10px] font-medium text-[#B45309] bg-[#FFFDF5] border border-[#FEEBB5] px-1.5 py-0.2 rounded">
                               Twin ({p.total_weight_grams}g)
                             </span>
                           ) : (
-                            <span className="text-[10px] text-[#6B7280]">Single</span>
+                            <span className="text-[10px] text-[#737A74]">Single</span>
                           )}
                         </td>
 
                         {/* Observed Shelf Price */}
                         <td className="py-2.5 px-3.5 text-right font-data tabular-nums">
-                          <div className="font-bold text-[#111318]">₱{p.price_php.toFixed(2)}</div>
+                          <div className="font-bold text-[#163829]">₱{p.price_php.toFixed(2)}</div>
                           {p.regular_price_php > p.price_php && (
-                            <div className="text-[10px] text-[#9CA3AF] line-through">
+                            <div className="text-[10px] text-[#737A74] line-through">
                               ₱{p.regular_price_php.toFixed(2)}
                             </div>
                           )}
                         </td>
 
                         {/* Price per 100g */}
-                        <td className="py-2.5 px-3.5 text-right bg-[#F0FDF4]/50 font-data tabular-nums border-l border-r border-[#DCFCE7]/60">
-                          <div className="font-bold text-[#0F5132] text-sm">
+                        <td className="py-2.5 px-3.5 text-right bg-[#EEF4EE]/50 font-data tabular-nums border-l border-r border-[#DDEBE1]/60">
+                          <div className="font-bold text-[#176B4D] text-sm">
                             ₱{p.price_per_100g.toFixed(2)}
                           </div>
-                          <div className="text-[9px] text-[#6B7280]">₱{p.price_per_gram.toFixed(3)}/g</div>
+                          <div className="text-[9px] text-[#737A74]">₱{p.price_per_gram.toFixed(3)}/g</div>
                         </td>
 
                         {/* Price Index with inline micro-bar relative to 100 */}
                         <td className="py-2.5 px-3.5 text-right font-data tabular-nums">
-                          <div className="font-bold text-[#111318]">{p.price_index}</div>
+                          <div className="font-bold text-[#163829]">{p.price_index}</div>
                           <div
                             className={`text-[10px] font-sans font-medium ${
-                              isBelowMedian ? 'text-[#0F5132]' : 'text-[#B45309]'
+                              isBelowMedian ? 'text-[#176B4D]' : 'text-[#B45309]'
                             }`}
                           >
                             {Math.abs(p.relative_percent_vs_median)}% {isBelowMedian ? 'below' : 'above'}
                           </div>
                           {/* Mini dispersion bar vs 100 */}
-                          <div className="w-16 h-1 bg-[#E8E9EC] rounded-full overflow-hidden relative mt-1 ml-auto">
-                            <div className="absolute top-0 bottom-0 w-0.5 bg-[#9CA3AF] left-1/2 -translate-x-1/2 z-10" />
+                          <div className="w-16 h-1 bg-[#E3E6DF] rounded-full overflow-hidden relative mt-1 ml-auto">
+                            <div className="absolute top-0 bottom-0 w-0.5 bg-[#737A74] left-1/2 -translate-x-1/2 z-10" />
                             <div
                               className={`absolute top-0 bottom-0 rounded-full ${
-                                isBelowMedian ? 'bg-[#10B981] right-1/2' : 'bg-[#D97706] left-1/2'
+                                isBelowMedian ? 'bg-[#176B4D] right-1/2' : 'bg-[#D97706] left-1/2'
                               }`}
                               style={{
                                 width: `${Math.min(50, Math.abs(p.relative_percent_vs_median) * 0.6)}%`
@@ -547,10 +547,10 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                           <span
                             className={`inline-block font-bold px-2 py-0.5 rounded text-xs ${
                               p.value_score >= 80
-                                ? 'bg-[#F0FDF4] text-[#0F5132] border border-[#DCFCE7]'
+                                ? 'bg-[#EEF4EE] text-[#176B4D] border border-[#DDEBE1]'
                                 : p.value_score >= 65
-                                ? 'bg-[#F8F9FB] text-[#111318] border border-[#E8E9EC]'
-                                : 'bg-[#F8F9FB] text-[#6B7280] border border-[#E8E9EC]'
+                                ? 'bg-[#FAFAF7] text-[#163829] border border-[#E3E6DF]'
+                                : 'bg-[#FAFAF7] text-[#737A74] border border-[#E3E6DF]'
                             }`}
                           >
                             {p.value_score}/100
@@ -559,8 +559,8 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
                         {/* Retailer */}
                         <td className="py-2.5 px-3.5">
-                          <div className="font-semibold text-[#111318]">{p.retailer}</div>
-                          <div className="text-[10px] text-[#6B7280]">{p.retailer_type}</div>
+                          <div className="font-semibold text-[#163829]">{p.retailer}</div>
+                          <div className="text-[10px] text-[#737A74]">{p.retailer_type}</div>
                         </td>
 
                         {/* Action */}
@@ -568,7 +568,7 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
                           <button
                             type="button"
                             onClick={() => onSelectProduct(p)}
-                            className="text-[11px] font-semibold text-[#0F5132] hover:underline cursor-pointer"
+                            className="text-[11px] font-semibold text-[#176B4D] hover:underline cursor-pointer"
                           >
                             Inspect
                           </button>
@@ -590,27 +590,27 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
               <div
                 key={p.product_id}
                 className={`bg-white border rounded-xl p-5 transition-all flex flex-col justify-between shadow-card hover:shadow-card-hover ${
-                  isSelected ? 'border-[#0F5132] ring-1 ring-[#0F5132] bg-[#F0FDF4]/30' : 'border-[#E8E9EC] hover:border-[#CBD5E1]'
+                  isSelected ? 'border-[#176B4D] ring-1 ring-[#176B4D] bg-[#EEF4EE]/30' : 'border-[#E3E6DF] hover:border-[#176B4D]/40'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-2.5">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-md bg-[#F8F9FB] text-[#111318] border border-[#E8E9EC]">
+                      <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-md bg-[#FAFAF7] text-[#163829] border border-[#E3E6DF]">
                         {p.brand}
                       </span>
                       {p.is_multipack && (
-                        <span className="text-[10px] font-medium bg-[#FFFBEB] text-[#B45309] border border-[#FDE68A] px-1.5 py-0.2 rounded">
+                        <span className="text-[10px] font-medium bg-[#FFFDF5] text-[#B8860B] border border-[#FEEBB5] px-1.5 py-0.2 rounded">
                           Twin Pack
                         </span>
                       )}
                     </div>
-                    <label className="flex items-center gap-1.5 text-xs text-[#6B7280] cursor-pointer">
+                    <label className="flex items-center gap-1.5 text-xs text-[#737A74] cursor-pointer">
                       <input
                         type="checkbox"
                         checked={isSelected}
                         onChange={() => onToggleCompare(p)}
-                        className="rounded border-[#E8E9EC] bg-white text-[#0F5132] focus:ring-[#0F5132] accent-[#0F5132]"
+                        className="rounded border-[#E3E6DF] bg-white text-[#176B4D] focus:ring-[#176B4D] accent-[#176B4D]"
                       />
                       <span>Compare</span>
                     </label>
@@ -618,30 +618,30 @@ export const PriceExplorerTab: React.FC<PriceExplorerTabProps> = ({
 
                   <h4
                     onClick={() => onSelectProduct(p)}
-                    className="font-bold text-[#111318] text-sm hover:text-[#0F5132] cursor-pointer line-clamp-2 leading-snug"
+                    className="font-bold text-[#163829] text-sm hover:text-[#176B4D] cursor-pointer line-clamp-2 leading-snug"
                   >
                     {p.product_name}
                   </h4>
-                  <p className="text-xs text-[#6B7280] mt-0.5">
+                  <p className="text-xs text-[#737A74] mt-0.5">
                     {p.variant} &bull; {p.size_value}
                     {p.size_unit} ({p.retailer})
                   </p>
 
                   <div className="mt-3 flex items-center gap-1.5 flex-wrap text-[10px]">
-                    {p.whitening && <span className="px-1.5 py-0.5 bg-[#F8F9FB] text-[#6B7280] rounded border border-[#E8E9EC]">Whitening</span>}
-                    {p.sensitivity && <span className="px-1.5 py-0.5 bg-[#F0FDF4] text-[#0F5132] rounded border border-[#DCFCE7]">Sensitive</span>}
-                    {p.gum_care && <span className="px-1.5 py-0.5 bg-[#F8F9FB] text-[#6B7280] rounded border border-[#E8E9EC]">Gum Care</span>}
+                    {p.whitening && <span className="px-1.5 py-0.5 bg-[#FAFAF7] text-[#737A74] rounded border border-[#E3E6DF]">Whitening</span>}
+                    {p.sensitivity && <span className="px-1.5 py-0.5 bg-[#EEF4EE] text-[#176B4D] rounded border border-[#DDEBE1]">Sensitive</span>}
+                    {p.gum_care && <span className="px-1.5 py-0.5 bg-[#FAFAF7] text-[#737A74] rounded border border-[#E3E6DF]">Gum Care</span>}
                   </div>
                 </div>
 
-                <div className="pt-3.5 mt-3.5 border-t border-[#F1F5F9] flex items-end justify-between">
+                <div className="pt-3.5 mt-3.5 border-t border-[#EEF0EA] flex items-end justify-between">
                   <div>
-                    <div className="text-[10px] uppercase tracking-wider text-[#9CA3AF]">Shelf Price</div>
-                    <div className="text-base font-data tabular-nums font-bold text-[#111318]">₱{p.price_php.toFixed(2)}</div>
+                    <div className="text-[10px] uppercase tracking-wider text-[#737A74]">Shelf Price</div>
+                    <div className="text-base font-data tabular-nums font-bold text-[#163829]">₱{p.price_php.toFixed(2)}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] uppercase tracking-wider text-[#0F5132] font-bold">Unit Cost</div>
-                    <div className="text-base font-data tabular-nums font-bold text-[#0F5132]">₱{p.price_per_100g.toFixed(2)}/100g</div>
+                    <div className="text-[10px] uppercase tracking-wider text-[#176B4D] font-bold">Unit Cost</div>
+                    <div className="text-base font-data tabular-nums font-bold text-[#176B4D]">₱{p.price_per_100g.toFixed(2)}/100g</div>
                   </div>
                 </div>
               </div>

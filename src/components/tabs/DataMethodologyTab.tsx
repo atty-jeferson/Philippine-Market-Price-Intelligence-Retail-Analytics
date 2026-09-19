@@ -161,7 +161,7 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               id="open-value-model-btn"
               type="button"
               onClick={onOpenValueModel}
-              className="text-xs font-semibold bg-white text-[#111318] hover:bg-[#F8F9FB] px-3 py-1.5 rounded-lg border border-[#E8E9EC] transition-all shadow-xs cursor-pointer"
+              className="text-xs font-semibold bg-white text-[#163829] hover:bg-[#FAFAF7] px-3 py-1.5 rounded-lg border border-[#E3E6DF] transition-all shadow-xs cursor-pointer font-sans"
             >
               Configure Value Score Model
             </button>
@@ -171,23 +171,23 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
       />
 
       {/* 2. IMPORT / EXPORT & DATASET MANAGEMENT CONTROLS */}
-      <div className="bg-white p-6 rounded-xl border border-[#E8E9EC] shadow-card space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F1F5F9] pb-4">
+      <div className="bg-white p-6 rounded-xl border border-[#E3E6DF] shadow-card space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#EEF0EA] pb-4">
           <div>
-            <h3 className="text-xl font-bold text-[#111318] flex items-center gap-2 tracking-tight">
-              <Database className="w-5 h-5 text-[#0F5132]" />
+            <h3 className="text-xl font-bold text-[#163829] flex items-center gap-2 tracking-tight font-sans">
+              <Database className="w-5 h-5 text-[#176B4D]" />
               <span>Dataset Import &amp; Ingestion Center</span>
             </h3>
-            <p className="text-xs text-[#6B7280] mt-0.5">
+            <p className="text-xs text-[#737A74] mt-0.5 font-sans">
               Multi-tier CSV ingestion with automated column mapping, entity resolution, and audit validation
             </p>
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap font-sans">
             <button
               id="export-complete-csv-btn"
               type="button"
               onClick={handleExportAll}
-              className="flex items-center gap-1.5 text-xs bg-[#0F5132] hover:bg-[#0B3D26] text-white font-semibold px-3.5 py-2 rounded-lg transition-all shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 text-xs bg-[#176B4D] hover:bg-[#12523B] text-white font-semibold px-3.5 py-2 rounded-lg transition-all shadow-xs cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Export Full CSV ({products.length})</span>
@@ -197,9 +197,9 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               id="import-csv-trigger-btn"
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-1.5 text-xs bg-[#F8F9FB] hover:bg-[#F1F5F9] text-[#111318] font-semibold px-3.5 py-2 rounded-lg border border-[#E8E9EC] transition-all cursor-pointer shadow-xs"
+              className="flex items-center gap-1.5 text-xs bg-[#FAFAF7] hover:bg-[#EEF0EA] text-[#163829] font-semibold px-3.5 py-2 rounded-lg border border-[#E3E6DF] transition-all cursor-pointer shadow-xs"
             >
-              <Upload className="w-3.5 h-3.5 text-[#0F5132]" />
+              <Upload className="w-3.5 h-3.5 text-[#176B4D]" />
               <span>Import CSV</span>
             </button>
 
@@ -207,7 +207,7 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               id="reset-default-data-btn"
               type="button"
               onClick={handleResetToDefault}
-              className="flex items-center gap-1.5 text-xs text-[#6B7280] hover:text-[#111318] bg-[#F8F9FB] hover:bg-[#F1F5F9] px-3 py-2 rounded-lg border border-[#E8E9EC] transition-all cursor-pointer shadow-xs"
+              className="flex items-center gap-1.5 text-xs text-[#737A74] hover:text-[#163829] bg-[#FAFAF7] hover:bg-[#EEF0EA] px-3 py-2 rounded-lg border border-[#E3E6DF] transition-all cursor-pointer shadow-xs"
               title="Restore standard benchmark Philippine market observations"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -227,14 +227,14 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
         {/* Status Notification */}
         {importStatus.type && (
           <div
-            className={`p-3.5 rounded-xl text-xs flex items-center gap-2.5 ${
+            className={`p-3.5 rounded-xl text-xs flex items-center gap-2.5 font-sans ${
               importStatus.type === 'success'
-                ? 'bg-[#F0FDF4] text-[#0F5132] border border-[#DCFCE7]'
+                ? 'bg-[#EEF4EE] text-[#176B4D] border border-[#DDEBE1]'
                 : 'bg-[#FEF2F2] text-[#991B1B] border border-[#FEE2E2]'
             }`}
           >
             {importStatus.type === 'success' ? (
-              <CheckCircle2 className="w-4 h-4 text-[#0F5132] shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#176B4D] shrink-0" />
             ) : (
               <AlertTriangle className="w-4 h-4 text-[#991B1B] shrink-0" />
             )}
@@ -242,73 +242,73 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
           </div>
         )}
 
-        <div className="text-[11px] text-[#6B7280] leading-relaxed font-sans">
-          <span className="font-bold text-[#111318]">Ingestion Engine:</span> Automatically maps column aliases for Brand, Product Name, Variant, GTIN Barcode, Shelf Price, SRP, Retailer, Store Branch, Date, Net Content, UOM, and Multipack Units.
+        <div className="text-[11px] text-[#737A74] leading-relaxed font-sans">
+          <span className="font-bold text-[#163829]">Ingestion Engine:</span> Automatically maps column aliases for Brand, Product Name, Variant, GTIN Barcode, Shelf Price, SRP, Retailer, Store Branch, Date, Net Content, UOM, and Multipack Units.
         </div>
       </div>
 
       {/* 3. TRUST SCOREBOARD */}
-      <div className="bg-white p-6 rounded-xl border border-[#E8E9EC] shadow-card space-y-4 font-sans">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F1F5F9] pb-4">
+      <div className="bg-white p-6 rounded-xl border border-[#E3E6DF] shadow-card space-y-4 font-sans">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#EEF0EA] pb-4">
           <div>
-            <h3 className="text-xl font-bold text-[#111318] flex items-center gap-2 tracking-tight">
-              <ShieldCheck className="w-5 h-5 text-[#0F5132]" />
+            <h3 className="text-xl font-bold text-[#163829] flex items-center gap-2 tracking-tight">
+              <ShieldCheck className="w-5 h-5 text-[#176B4D]" />
               <span>Ingestion Trust Scoreboard &amp; Coverage</span>
             </h3>
-            <p className="text-xs text-[#6B7280] mt-0.5">
+            <p className="text-xs text-[#737A74] mt-0.5">
               Continuous validation measuring data completeness, physical identity resolution, and temporal freshness
             </p>
           </div>
-          <div className="text-xs font-bold px-3 py-1 rounded-md bg-[#F0FDF4] text-[#0F5132] border border-[#DCFCE7]">
+          <div className="text-xs font-bold px-3 py-1 rounded-md bg-[#EEF4EE] text-[#176B4D] border border-[#DDEBE1]">
             Trust Score: <span className="font-data">{liveAuditSummary.qualityScorePercent}%</span>
           </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Active SKUs</span>
-            <div className="text-xl font-data tabular-nums font-bold text-[#111318] mt-0.5">{liveAuditSummary.validRows}</div>
-            <span className="text-[#6B7280] text-[10px]">In-memory dataset</span>
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Active SKUs</span>
+            <div className="text-xl font-data tabular-nums font-bold text-[#163829] mt-0.5">{liveAuditSummary.validRows}</div>
+            <span className="text-[#737A74] text-[10px]">In-memory dataset</span>
           </div>
 
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Rejected Rows</span>
-            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.rejectedRows > 0 ? 'text-[#991B1B]' : 'text-[#0F5132]'}`}>
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Rejected Rows</span>
+            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.rejectedRows > 0 ? 'text-[#991B1B]' : 'text-[#176B4D]'}`}>
               {liveAuditSummary.rejectedRows}
             </div>
-            <span className="text-[#6B7280] text-[10px]">Missing identity/price</span>
+            <span className="text-[#737A74] text-[10px]">Missing identity/price</span>
           </div>
 
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Warnings Flagged</span>
-            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.warningCount > 0 ? 'text-[#B45309]' : 'text-[#0F5132]'}`}>
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Warnings Flagged</span>
+            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.warningCount > 0 ? 'text-[#B8860B]' : 'text-[#176B4D]'}`}>
               {liveAuditSummary.warningCount}
             </div>
-            <span className="text-[#6B7280] text-[10px]">Remediated / usable</span>
+            <span className="text-[#737A74] text-[10px]">Remediated / usable</span>
           </div>
 
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Duplicates</span>
-            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.duplicateCount > 0 ? 'text-[#B45309]' : 'text-[#0F5132]'}`}>
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Duplicates</span>
+            <div className={`text-xl font-data tabular-nums font-bold mt-0.5 ${liveAuditSummary.duplicateCount > 0 ? 'text-[#B8860B]' : 'text-[#176B4D]'}`}>
               {liveAuditSummary.duplicateCount}
             </div>
-            <span className="text-[#6B7280] text-[10px]">Same SKU+Store+Date</span>
+            <span className="text-[#737A74] text-[10px]">Same SKU+Store+Date</span>
           </div>
 
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Price Outliers</span>
-            <div className="text-xl font-data tabular-nums font-bold text-[#111318] mt-0.5">
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Price Outliers</span>
+            <div className="text-xl font-data tabular-nums font-bold text-[#163829] mt-0.5">
               {qualityReport.suspiciousPriceCount}
             </div>
-            <span className="text-[#6B7280] text-[10px]">&gt; 3 std deviations</span>
+            <span className="text-[#737A74] text-[10px]">&gt; 3 std deviations</span>
           </div>
 
-          <div className="p-3 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl">
-            <span className="text-[#6B7280] text-[10px] uppercase tracking-wider font-bold">Freshness</span>
-            <div className="text-sm font-data font-bold text-[#111318] mt-1 truncate" title={liveAuditSummary.freshness.newestDate || 'N/A'}>
+          <div className="p-3 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl">
+            <span className="text-[#737A74] text-[10px] uppercase tracking-wider font-bold">Freshness</span>
+            <div className="text-sm font-data font-bold text-[#163829] mt-1 truncate" title={liveAuditSummary.freshness.newestDate || 'N/A'}>
               {liveAuditSummary.freshness.newestDate || 'Aug 2024'}
             </div>
-            <span className="text-[#6B7280] text-[10px]">
+            <span className="text-[#737A74] text-[10px]">
               {liveAuditSummary.freshness.dateSpanDays > 0 ? `${liveAuditSummary.freshness.dateSpanDays}d window` : 'Single snapshot'}
             </span>
           </div>
@@ -316,17 +316,17 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
       </div>
 
       {/* 4. INTERACTIVE INGESTION INSPECTOR */}
-      <div className="bg-white rounded-xl border border-[#E8E9EC] shadow-card overflow-hidden">
+      <div className="bg-white rounded-xl border border-[#E3E6DF] shadow-card overflow-hidden">
         {/* Navigation Tabs */}
-        <div className="flex border-b border-[#E8E9EC] bg-[#F8F9FB] px-4 pt-2 gap-2 text-xs overflow-x-auto">
+        <div className="flex border-b border-[#E3E6DF] bg-[#FAFAF7] px-4 pt-2 gap-2 text-xs overflow-x-auto font-sans">
           <button
             id="subtab-audit-ledger-btn"
             type="button"
             onClick={() => setActiveSubTab('audit_ledger')}
             className={`px-3 py-2.5 border-b-2 font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
               activeSubTab === 'audit_ledger'
-                ? 'border-[#0F5132] text-[#0F5132] bg-white rounded-t-lg'
-                : 'border-transparent text-[#6B7280] hover:text-[#111318]'
+                ? 'border-[#176B4D] text-[#176B4D] bg-white rounded-t-lg'
+                : 'border-transparent text-[#737A74] hover:text-[#163829]'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -339,8 +339,8 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             onClick={() => setActiveSubTab('schema_mapping')}
             className={`px-3 py-2.5 border-b-2 font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
               activeSubTab === 'schema_mapping'
-                ? 'border-[#0F5132] text-[#0F5132] bg-white rounded-t-lg'
-                : 'border-transparent text-[#6B7280] hover:text-[#111318]'
+                ? 'border-[#176B4D] text-[#176B4D] bg-white rounded-t-lg'
+                : 'border-transparent text-[#737A74] hover:text-[#163829]'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -353,8 +353,8 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             onClick={() => setActiveSubTab('identity_evidence')}
             className={`px-3 py-2.5 border-b-2 font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
               activeSubTab === 'identity_evidence'
-                ? 'border-[#0F5132] text-[#0F5132] bg-white rounded-t-lg'
-                : 'border-transparent text-[#6B7280] hover:text-[#111318]'
+                ? 'border-[#176B4D] text-[#176B4D] bg-white rounded-t-lg'
+                : 'border-transparent text-[#737A74] hover:text-[#163829]'
             }`}
           >
             <Hash className="w-3.5 h-3.5" />
@@ -367,8 +367,8 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             onClick={() => setActiveSubTab('statistical_standards')}
             className={`px-3 py-2.5 border-b-2 font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
               activeSubTab === 'statistical_standards'
-                ? 'border-[#0F5132] text-[#0F5132] bg-white rounded-t-lg'
-                : 'border-transparent text-[#6B7280] hover:text-[#111318]'
+                ? 'border-[#176B4D] text-[#176B4D] bg-white rounded-t-lg'
+                : 'border-transparent text-[#737A74] hover:text-[#163829]'
             }`}
           >
             <BarChart2 className="w-3.5 h-3.5" />
@@ -378,11 +378,11 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
 
         {/* Sub-Tab 1: Validation & Issue Ledger */}
         {activeSubTab === 'audit_ledger' && (
-          <div className="p-6 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#F1F5F9]">
+          <div className="p-6 space-y-4 font-sans">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#EEF0EA]">
               <div>
-                <h4 className="text-sm font-bold text-[#111318]">Structured Issue Audit Ledger</h4>
-                <p className="text-xs text-[#6B7280]">
+                <h4 className="text-sm font-bold text-[#163829]">Structured Issue Audit Ledger</h4>
+                <p className="text-xs text-[#737A74]">
                   Explicit severity categorization separating fatal rejection errors from non-fatal quality warnings
                 </p>
               </div>
@@ -392,10 +392,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setSeverityFilter('ALL')}
-                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     severityFilter === 'ALL'
-                      ? 'bg-[#111318] text-white shadow-xs'
-                      : 'bg-[#F8F9FB] text-[#6B7280] hover:bg-[#F1F5F9] border border-[#E8E9EC]'
+                      ? 'bg-[#163829] text-white shadow-xs'
+                      : 'bg-[#FAFAF7] text-[#737A74] hover:bg-[#EEF0EA] border border-[#E3E6DF]'
                   }`}
                 >
                   All ({liveAuditSummary.issues.length})
@@ -404,10 +404,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setSeverityFilter('ERROR')}
-                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     severityFilter === 'ERROR'
                       ? 'bg-[#991B1B] text-white'
-                      : 'bg-[#F8F9FB] text-[#991B1B] hover:bg-red-50 border border-[#E8E9EC]'
+                      : 'bg-[#FAFAF7] text-[#991B1B] hover:bg-red-50 border border-[#E3E6DF]'
                   }`}
                 >
                   Errors ({liveAuditSummary.errorCount})
@@ -416,10 +416,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setSeverityFilter('WARNING')}
-                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     severityFilter === 'WARNING'
-                      ? 'bg-[#B45309] text-white'
-                      : 'bg-[#F8F9FB] text-[#B45309] hover:bg-amber-50 border border-[#E8E9EC]'
+                      ? 'bg-[#B8860B] text-white'
+                      : 'bg-[#FAFAF7] text-[#B8860B] hover:bg-amber-50 border border-[#E3E6DF]'
                   }`}
                 >
                   Warnings ({liveAuditSummary.warningCount})
@@ -428,10 +428,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setSeverityFilter('DUPLICATE')}
-                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     severityFilter === 'DUPLICATE'
                       ? 'bg-[#7C3AED] text-white'
-                      : 'bg-[#F8F9FB] text-[#7C3AED] hover:bg-purple-50 border border-[#E8E9EC]'
+                      : 'bg-[#FAFAF7] text-[#7C3AED] hover:bg-purple-50 border border-[#E3E6DF]'
                   }`}
                 >
                   Duplicates ({liveAuditSummary.duplicateCount})
@@ -440,10 +440,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                 <button
                   type="button"
                   onClick={() => setSeverityFilter('INFO')}
-                  className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     severityFilter === 'INFO'
-                      ? 'bg-[#0F5132] text-white'
-                      : 'bg-[#F8F9FB] text-[#0F5132] hover:bg-[#F0FDF4] border border-[#E8E9EC]'
+                      ? 'bg-[#176B4D] text-white'
+                      : 'bg-[#FAFAF7] text-[#176B4D] hover:bg-[#EEF4EE] border border-[#E3E6DF]'
                   }`}
                 >
                   Info ({liveAuditSummary.infoCount})
@@ -452,14 +452,14 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             </div>
 
             {filteredIssues.length === 0 ? (
-              <div className="py-12 text-center text-[#6B7280] text-xs font-mono">
-                <CheckCircle2 className="w-8 h-8 text-[#0F5132] mx-auto mb-2 opacity-80" />
-                <span>No issues found matching severity filter <strong className="text-[#111318]">{severityFilter}</strong>.</span>
+              <div className="py-12 text-center text-[#737A74] text-xs">
+                <CheckCircle2 className="w-8 h-8 text-[#176B4D] mx-auto mb-2 opacity-80" />
+                <span>No issues found matching severity filter <strong className="text-[#163829]">{severityFilter}</strong>.</span>
               </div>
             ) : (
-              <div className="overflow-x-auto border border-[#E8E9EC] rounded-xl">
+              <div className="overflow-x-auto border border-[#E3E6DF] rounded-xl">
                 <table className="w-full text-xs text-left border-collapse">
-                  <thead className="bg-[#F8F9FB] text-[#6B7280] uppercase tracking-wider font-mono font-semibold border-b border-[#E8E9EC] text-[10px]">
+                  <thead className="bg-[#FAFAF7] text-[#737A74] uppercase tracking-wider font-semibold border-b border-[#E3E6DF] text-[10px]">
                     <tr>
                       <th className="py-2.5 px-3">Row</th>
                       <th className="py-2.5 px-3">Severity</th>
@@ -469,29 +469,29 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                       <th className="py-2.5 px-3">Remediation</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#F1F5F9] font-sans">
+                  <tbody className="divide-y divide-[#EEF0EA] font-sans">
                     {filteredIssues.slice(0, 50).map((issue, idx) => (
-                      <tr key={idx} className="hover:bg-[#F8F9FB]">
-                        <td className="py-2 px-3 font-mono text-[#111318]">#{issue.rowNumber}</td>
+                      <tr key={idx} className="hover:bg-[#FAFAF7]">
+                        <td className="py-2 px-3 font-data text-[#163829]">#{issue.rowNumber}</td>
                         <td className="py-2 px-3">
                           <span
-                            className={`inline-block px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider ${
+                            className={`inline-block px-1.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
                               issue.severity === 'ERROR'
                                 ? 'bg-[#FEF2F2] text-[#991B1B] border border-[#FEE2E2]'
                                 : issue.severity === 'WARNING'
-                                ? 'bg-[#FFFBEB] text-[#B45309] border border-[#FDE68A]'
-                                : 'bg-[#F0FDF4] text-[#0F5132] border border-[#DCFCE7]'
+                                ? 'bg-[#FFFDF5] text-[#B8860B] border border-[#FEEBB5]'
+                                : 'bg-[#EEF4EE] text-[#176B4D] border border-[#DDEBE1]'
                             }`}
                           >
                             {issue.severity}
                           </span>
                         </td>
-                        <td className="py-2 px-3 font-mono text-[#111318]">{issue.field || 'all'}</td>
-                        <td className="py-2 px-3 font-mono text-[11px] text-[#6B7280]">{issue.code}</td>
-                        <td className="py-2 px-3 text-[#111318] max-w-xs truncate" title={issue.message}>
+                        <td className="py-2 px-3 font-data text-[#163829]">{issue.field || 'all'}</td>
+                        <td className="py-2 px-3 font-data text-[11px] text-[#737A74]">{issue.code}</td>
+                        <td className="py-2 px-3 text-[#163829] max-w-xs truncate" title={issue.message}>
                           {issue.message}
                         </td>
-                        <td className="py-2 px-3 text-[#6B7280] text-[11px] italic">
+                        <td className="py-2 px-3 text-[#737A74] text-[11px] italic">
                           {issue.remediationAction || 'Logged in audit report'}
                         </td>
                       </tr>
@@ -505,28 +505,28 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
 
         {/* Sub-Tab 2: Schema & Field Mapping Registry */}
         {activeSubTab === 'schema_mapping' && (
-          <div className="p-6 space-y-5">
+          <div className="p-6 space-y-5 font-sans">
             <div>
-              <h4 className="text-sm font-bold text-[#111318]">Curated Schema Mapping Registry</h4>
-              <p className="text-xs text-[#6B7280]">
+              <h4 className="text-sm font-bold text-[#163829]">Curated Schema Mapping Registry</h4>
+              <p className="text-xs text-[#737A74]">
                 The mapping layer recognizes structured retail CSV headers and harmonizes synonym variations without sprawl
               </p>
             </div>
 
             {/* Last imported column inspection if available */}
             {lastPipelineResult && lastPipelineResult.schemaReport.mappings.length > 0 && (
-              <div className="p-4 bg-[#F0FDF4] border border-[#DCFCE7] rounded-xl space-y-2 text-xs">
-                <h5 className="font-bold text-[#0F5132] flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#EEF4EE] border border-[#DDEBE1] rounded-xl space-y-2 text-xs">
+                <h5 className="font-bold text-[#176B4D] flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-[#176B4D]" />
                   <span>Last Imported CSV Header Analysis ({lastPipelineResult.schemaReport.mappings.length} columns detected)</span>
                 </h5>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 pt-1">
                   {lastPipelineResult.schemaReport.mappings.map((m, idx) => (
-                    <div key={idx} className="p-2 bg-white rounded-lg border border-[#DCFCE7] text-[11px]">
-                      <div className="font-mono text-[#111318] font-bold truncate" title={m.rawHeader}>
+                    <div key={idx} className="p-2 bg-white rounded-lg border border-[#DDEBE1] text-[11px]">
+                      <div className="font-data text-[#163829] font-bold truncate" title={m.rawHeader}>
                         &ldquo;{m.rawHeader}&rdquo;
                       </div>
-                      <div className="text-[#0F5132] mt-0.5 flex items-center gap-1 font-mono">
+                      <div className="text-[#176B4D] mt-0.5 flex items-center gap-1 font-data">
                         <span>&rarr;</span>
                         <span>{m.matchedField ? m.matchedField.canonicalKey : 'Unmapped'}</span>
                       </div>
@@ -536,9 +536,9 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               </div>
             )}
 
-            <div className="overflow-x-auto border border-[#E8E9EC] rounded-xl">
+            <div className="overflow-x-auto border border-[#E3E6DF] rounded-xl">
               <table className="w-full text-xs text-left border-collapse">
-                <thead className="bg-[#F8F9FB] text-[#6B7280] uppercase tracking-wider font-mono font-semibold border-b border-[#E8E9EC] text-[10px]">
+                <thead className="bg-[#FAFAF7] text-[#737A74] uppercase tracking-wider font-semibold border-b border-[#E3E6DF] text-[10px]">
                   <tr>
                     <th className="py-2.5 px-3">Canonical Key</th>
                     <th className="py-2.5 px-3">Canonical Label</th>
@@ -546,31 +546,31 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
                     <th className="py-2.5 px-3">Recognized Aliases</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#F1F5F9] font-sans">
+                <tbody className="divide-y divide-[#EEF0EA] font-sans">
                   {CANONICAL_FIELD_REGISTRY.map((field, idx) => (
-                    <tr key={idx} className="hover:bg-[#F8F9FB]">
-                      <td className="py-2 px-3 font-mono font-bold text-[#0F5132]">{field.canonicalKey}</td>
-                      <td className="py-2 px-3 text-[#111318] font-medium">{field.label}</td>
+                    <tr key={idx} className="hover:bg-[#FAFAF7]">
+                      <td className="py-2 px-3 font-data font-bold text-[#176B4D]">{field.canonicalKey}</td>
+                      <td className="py-2 px-3 text-[#163829] font-medium">{field.label}</td>
                       <td className="py-2 px-3">
                         {field.required ? (
-                          <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-[#FEF2F2] text-[#991B1B] border border-[#FEE2E2]">
+                          <span className="px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-[#FEF2F2] text-[#991B1B] border border-[#FEE2E2]">
                             Required
                           </span>
                         ) : (
-                          <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono font-semibold bg-[#F8F9FB] text-[#6B7280] border border-[#E8E9EC]">
+                          <span className="px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-[#FAFAF7] text-[#737A74] border border-[#E3E6DF]">
                             Optional
                           </span>
                         )}
                       </td>
-                      <td className="py-2 px-3 text-[#6B7280]">
+                      <td className="py-2 px-3 text-[#737A74]">
                         <div className="flex flex-wrap gap-1">
                           {field.aliases.slice(0, 6).map((alias, aIdx) => (
-                            <code key={aIdx} className="bg-[#F8F9FB] px-1 py-0.5 rounded text-[10px] font-mono border border-[#E8E9EC] text-[#111318]">
+                            <code key={aIdx} className="bg-[#FAFAF7] px-1 py-0.5 rounded text-[10px] font-data border border-[#E3E6DF] text-[#163829]">
                               {alias}
                             </code>
                           ))}
                           {field.aliases.length > 6 && (
-                            <span className="text-[10px] text-[#6B7280] font-mono self-center">+{field.aliases.length - 6} more</span>
+                            <span className="text-[10px] text-[#737A74] font-data self-center">+{field.aliases.length - 6} more</span>
                           )}
                         </div>
                       </td>
@@ -584,81 +584,81 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
 
         {/* Sub-Tab 3: Identity Resolution & Evidence Provenance */}
         {activeSubTab === 'identity_evidence' && (
-          <div className="p-6 space-y-5">
+          <div className="p-6 space-y-5 font-sans">
             <div>
-              <h4 className="text-sm font-bold text-[#111318]">Identity Resolution &amp; Evidence Classification Hierarchy</h4>
-              <p className="text-xs text-[#6B7280]">
+              <h4 className="text-sm font-bold text-[#163829]">Identity Resolution &amp; Evidence Classification Hierarchy</h4>
+              <p className="text-xs text-[#737A74]">
                 How THE GROCER distinguishes physical consumer SKUs from multiple store shelf listings and tracks observational provenance
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#0F5132] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Hash className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#176B4D] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Hash className="w-4 h-4 text-[#176B4D]" />
                   <span>Tier 1: Global GTIN / EAN</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
                   Authoritative 13-digit EAN/GTIN barcodes directly identifying the global trade unit. Highest confidence, zero ambiguity across channels.
                 </p>
-                <div className="text-[10px] text-[#0F5132] font-mono font-bold bg-[#F0FDF4] px-2 py-1 rounded-md border border-[#DCFCE7]">
+                <div className="text-[10px] text-[#176B4D] font-data font-bold bg-[#EEF4EE] px-2 py-1 rounded-md border border-[#DDEBE1]">
                   Format: sku-gtin-4800012345678
                 </div>
               </div>
 
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#111318] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Tag className="w-4 h-4 text-[#111318]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#163829] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Tag className="w-4 h-4 text-[#163829]" />
                   <span>Tier 2: Explicit Catalog ID</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
                   Explicit manufacturer or authoritative syndicated catalog identifiers provided by ERP feeds or structured shelf audits.
                 </p>
-                <div className="text-[10px] text-[#111318] font-mono font-bold bg-white px-2 py-1 rounded-md border border-[#E8E9EC]">
+                <div className="text-[10px] text-[#163829] font-data font-bold bg-white px-2 py-1 rounded-md border border-[#E3E6DF]">
                   Format: sku-id-col-tot-150
                 </div>
               </div>
 
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#B45309] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Layers className="w-4 h-4 text-[#B45309]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#B8860B] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Layers className="w-4 h-4 text-[#B8860B]" />
                   <span>Tier 3: Composite Slug Fallback</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
                   Deterministic normalized slug constructed from: Brand + Formulation + Variant + Net Content + UOM + Multipack Count.
                 </p>
-                <div className="text-[10px] text-[#B45309] font-mono font-bold bg-[#FFFBEB] px-2 py-1 rounded-md border border-[#FDE68A]">
+                <div className="text-[10px] text-[#B8860B] font-data font-bold bg-[#FFFDF5] px-2 py-1 rounded-md border border-[#FEEBB5]">
                   Format: sku-colgate-total-12-clean-mint-150g
                 </div>
               </div>
             </div>
 
             {/* Evidence Classifications */}
-            <div className="p-4 bg-white border border-[#E8E9EC] rounded-xl space-y-3">
-              <h5 className="font-bold text-[#111318] text-xs font-mono uppercase tracking-wider">Four-Tier Evidence Provenance Classification</h5>
+            <div className="p-4 bg-white border border-[#E3E6DF] rounded-xl space-y-3">
+              <h5 className="font-bold text-[#163829] text-xs uppercase tracking-wider">Four-Tier Evidence Provenance Classification</h5>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                <div className="p-3 bg-[#F8F9FB] rounded-xl border border-[#E8E9EC]">
-                  <span className="text-[10px] uppercase font-mono font-bold text-[#0F5132]">Observed</span>
-                  <div className="font-bold text-[#111318] mt-1">Direct Shelf Price</div>
-                  <p className="text-[11px] text-[#6B7280] mt-0.5">Scraped or audited consumer retail price at checkout</p>
+                <div className="p-3 bg-[#FAFAF7] rounded-xl border border-[#E3E6DF]">
+                  <span className="text-[10px] uppercase font-bold text-[#176B4D]">Observed</span>
+                  <div className="font-bold text-[#163829] mt-1">Direct Shelf Price</div>
+                  <p className="text-[11px] text-[#737A74] mt-0.5">Scraped or audited consumer retail price at checkout</p>
                 </div>
 
-                <div className="p-3 bg-[#F8F9FB] rounded-xl border border-[#E8E9EC]">
-                  <span className="text-[10px] uppercase font-mono font-bold text-[#111318]">Derived</span>
-                  <div className="font-bold text-[#111318] mt-1">₱ / 100g &amp; Index</div>
-                  <p className="text-[11px] text-[#6B7280] mt-0.5">Calculated using mathematical unit economics formulas</p>
+                <div className="p-3 bg-[#FAFAF7] rounded-xl border border-[#E3E6DF]">
+                  <span className="text-[10px] uppercase font-bold text-[#163829]">Derived</span>
+                  <div className="font-bold text-[#163829] mt-1">₱ / 100g &amp; Index</div>
+                  <p className="text-[11px] text-[#737A74] mt-0.5">Calculated using mathematical unit economics formulas</p>
                 </div>
 
-                <div className="p-3 bg-[#F8F9FB] rounded-xl border border-[#E8E9EC]">
-                  <span className="text-[10px] uppercase font-mono font-bold text-[#B45309]">Inferred</span>
-                  <div className="font-bold text-[#111318] mt-1">Synchronized SRP</div>
-                  <p className="text-[11px] text-[#6B7280] mt-0.5">Backfilled base regular price when discount is absent</p>
+                <div className="p-3 bg-[#FAFAF7] rounded-xl border border-[#E3E6DF]">
+                  <span className="text-[10px] uppercase font-bold text-[#B8860B]">Inferred</span>
+                  <div className="font-bold text-[#163829] mt-1">Synchronized SRP</div>
+                  <p className="text-[11px] text-[#737A74] mt-0.5">Backfilled base regular price when discount is absent</p>
                 </div>
 
-                <div className="p-3 bg-[#F8F9FB] rounded-xl border border-[#E8E9EC]">
-                  <span className="text-[10px] uppercase font-mono font-bold text-[#7C3AED]">Estimated</span>
-                  <div className="font-bold text-[#111318] mt-1">Density / Imputation</div>
-                  <p className="text-[11px] text-[#6B7280] mt-0.5">Assumed metric conversions (e.g. 1ml ~ 1.3g paste)</p>
+                <div className="p-3 bg-[#FAFAF7] rounded-xl border border-[#E3E6DF]">
+                  <span className="text-[10px] uppercase font-bold text-[#7C3AED]">Estimated</span>
+                  <div className="font-bold text-[#163829] mt-1">Density / Imputation</div>
+                  <p className="text-[11px] text-[#737A74] mt-0.5">Assumed metric conversions (e.g. 1ml ~ 1.3g paste)</p>
                 </div>
               </div>
             </div>
@@ -667,10 +667,10 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
 
         {/* Sub-Tab 4: Statistical Inference & Econometric Standards */}
         {activeSubTab === 'statistical_standards' && (
-          <div className="p-6 space-y-6">
+          <div className="p-6 space-y-6 font-sans">
             <div>
-              <h4 className="text-sm font-bold text-[#111318]">Statistical Inference, Regression &amp; Benchmarking Standards</h4>
-              <p className="text-xs text-[#6B7280]">
+              <h4 className="text-sm font-bold text-[#163829]">Statistical Inference, Regression &amp; Benchmarking Standards</h4>
+              <p className="text-xs text-[#737A74]">
                 Methodological rigor ensuring all estimations, confidence intervals, regressions, and longitudinal comparisons are mathematically sound, reproducible, and defensible
               </p>
             </div>
@@ -678,92 +678,92 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             {/* Grid of Statistical Pillars */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
               {/* Card 1: Small Sample Inference & Student's t */}
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#0F5132] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Calculator className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#176B4D] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Calculator className="w-4 h-4 text-[#176B4D]" />
                   <span>1. Student's t-Distribution vs Asymptotic Normal</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
-                  In FMCG retail market intelligence, brand portfolios often contain modest sample sizes (<strong className="text-[#111318]">n &lt; 30</strong>).
-                  Relying on asymptotic normal approximations (e.g., fixed <code className="bg-white px-1 py-0.5 rounded border border-[#E8E9EC] font-mono">z = 1.96</code>)
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
+                  In FMCG retail market intelligence, brand portfolios often contain modest sample sizes (<strong className="text-[#163829]">n &lt; 30</strong>).
+                  Relying on asymptotic normal approximations (e.g., fixed <code className="bg-white px-1 py-0.5 rounded border border-[#E3E6DF] font-data">z = 1.96</code>)
                   severely understates sampling variability and produces artificially tight confidence intervals.
                 </p>
-                <div className="p-2.5 bg-white rounded-lg border border-[#E8E9EC] space-y-1 font-mono text-[11px] text-[#0F5132]">
+                <div className="p-2.5 bg-white rounded-lg border border-[#E3E6DF] space-y-1 font-data text-[11px] text-[#176B4D]">
                   <div>df = n - 1</div>
                   <div>CI_95 = [ x̄ - t_(0.025, df) × SE, x̄ + t_(0.025, df) × SE ]</div>
-                  <div className="text-[10px] text-[#6B7280]">SE = s / √n (unbiased sample standard deviation)</div>
+                  <div className="text-[10px] text-[#737A74]">SE = s / √n (unbiased sample standard deviation)</div>
                 </div>
-                <p className="text-[#6B7280] text-[10px]">
-                  When sample size is insufficient (<strong className="text-[#111318]">n &lt; 2</strong>), the system explicitly refuses to calculate interval bounds and marks the result with an insufficient data badge.
+                <p className="text-[#737A74] text-[10px]">
+                  When sample size is insufficient (<strong className="text-[#163829]">n &lt; 2</strong>), the system explicitly refuses to calculate interval bounds and marks the result with an insufficient data badge.
                 </p>
               </div>
 
               {/* Card 2: Gauss-Jordan OLS & Singularity Safeguards */}
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#0F5132] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Layers className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#176B4D] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Layers className="w-4 h-4 text-[#176B4D]" />
                   <span>2. Multivariate OLS Matrix Inversion</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
-                  Both Package Size Economics (<code className="bg-white px-1 py-0.5 rounded border border-[#E8E9EC] font-mono">ln(P) ~ ln(Q)</code>)
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
+                  Both Package Size Economics (<code className="bg-white px-1 py-0.5 rounded border border-[#E3E6DF] font-data">ln(P) ~ ln(Q)</code>)
                   and Hedonic Pricing models solve the normal equation:
                   <br />
-                  <span className="font-mono text-[#0F5132] font-bold inline-block my-1">(X^T X) β = X^T Y</span>
+                  <span className="font-data text-[#176B4D] font-bold inline-block my-1">(X^T X) β = X^T Y</span>
                 </p>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
-                  Our numerical solver employs <strong className="text-[#111318]">Gauss-Jordan elimination with partial row pivoting</strong>.
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
+                  Our numerical solver employs <strong className="text-[#163829]">Gauss-Jordan elimination with partial row pivoting</strong>.
                   Before inversion, the engine screens for:
                 </p>
-                <ul className="list-disc list-inside text-[11px] text-[#6B7280] space-y-0.5">
-                  <li>Sample adequacy: <span className="font-mono">n &gt; k + 1</span> (strictly more observations than regressors)</li>
+                <ul className="list-disc list-inside text-[11px] text-[#737A74] space-y-0.5">
+                  <li>Sample adequacy: <span className="font-data">n &gt; k + 1</span> (strictly more observations than regressors)</li>
                   <li>Zero-variance regressor elimination (e.g. constant dummy indicators)</li>
-                  <li>Near-singular matrix protection via pivoting tolerance (<span className="font-mono">|pivot| &lt; 10^-12</span>)</li>
+                  <li>Near-singular matrix protection via pivoting tolerance (<span className="font-data">|pivot| &lt; 10^-12</span>)</li>
                 </ul>
               </div>
 
               {/* Card 3: Objective Pricing Metrics & Benchmarks */}
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#0F5132] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <Scale className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#176B4D] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <Scale className="w-4 h-4 text-[#176B4D]" />
                   <span>3. Price Indexes &amp; Benchmark Definitions</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
                   To eliminate subjective pricing claims, THE GROCER grounds all relative metrics against explicit, mathematically defined benchmarks:
                 </p>
                 <div className="space-y-1.5 text-[11px]">
-                  <div className="p-2 bg-white rounded-lg border border-[#E8E9EC]">
-                    <span className="font-mono font-bold text-[#0F5132]">Price Competitiveness Index (PCI):</span>
-                    <div className="font-mono text-[10px] text-[#6B7280] mt-0.5">PCI = (P_product / P_benchmark) × 100</div>
+                  <div className="p-2 bg-white rounded-lg border border-[#E3E6DF]">
+                    <span className="font-data font-bold text-[#176B4D]">Price Competitiveness Index (PCI):</span>
+                    <div className="font-data text-[10px] text-[#737A74] mt-0.5">PCI = (P_product / P_benchmark) × 100</div>
                   </div>
-                  <div className="p-2 bg-white rounded-lg border border-[#E8E9EC]">
-                    <span className="font-mono font-bold text-[#0F5132]">Relative Price Position (RPP):</span>
-                    <div className="font-mono text-[10px] text-[#6B7280] mt-0.5">RPP = ((P_product - P_benchmark) / P_benchmark) × 100</div>
+                  <div className="p-2 bg-white rounded-lg border border-[#E3E6DF]">
+                    <span className="font-data font-bold text-[#176B4D]">Relative Price Position (RPP):</span>
+                    <div className="font-data text-[10px] text-[#737A74] mt-0.5">RPP = ((P_product - P_benchmark) / P_benchmark) × 100</div>
                   </div>
                 </div>
-                <p className="text-[#6B7280] text-[10px]">
+                <p className="text-[#737A74] text-[10px]">
                   Benchmarks supported: Overall Market Median, Brand Portfolio Median, Subsegment Median, and Positioning Tier Median.
                 </p>
               </div>
 
               {/* Card 4: Longitudinal Price Change & Log Volatility */}
-              <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-2">
-                <div className="font-bold text-[#0F5132] flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider">
-                  <TrendingUp className="w-4 h-4 text-[#0F5132]" />
+              <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-2">
+                <div className="font-bold text-[#176B4D] flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                  <TrendingUp className="w-4 h-4 text-[#176B4D]" />
                   <span>4. Longitudinal Dynamics &amp; Log Volatility</span>
                 </div>
-                <p className="text-[#6B7280] text-[11px] leading-relaxed">
+                <p className="text-[#737A74] text-[11px] leading-relaxed">
                   Longitudinal price dynamics are computed strictly from sequential, time-stamped retail observation snapshots:
                 </p>
-                <div className="space-y-1 text-[11px] font-mono text-[#0F5132]">
-                  <div className="p-2 bg-white rounded-lg border border-[#E8E9EC]">
+                <div className="space-y-1 text-[11px] font-data text-[#176B4D]">
+                  <div className="p-2 bg-white rounded-lg border border-[#E3E6DF]">
                     <div className="font-bold">Log-Return Volatility (σ_log):</div>
-                    <div className="text-[10px] text-[#6B7280] mt-0.5 font-sans">
+                    <div className="text-[10px] text-[#737A74] mt-0.5 font-sans">
                       Standard deviation of log returns r_t = ln(P_t / P_{'{t-1}'}), providing scale-invariant volatility measurement across price levels.
                     </div>
                   </div>
-                  <div className="p-2 bg-white rounded-lg border border-[#E8E9EC]">
+                  <div className="p-2 bg-white rounded-lg border border-[#E3E6DF]">
                     <div className="font-bold">12-Month YoY Change:</div>
-                    <div className="text-[10px] text-[#6B7280] mt-0.5 font-sans">
+                    <div className="text-[10px] text-[#737A74] mt-0.5 font-sans">
                       Requires paired observations separated by at least 300 days (refuses fabrication if no prior-year record exists).
                     </div>
                   </div>
@@ -772,12 +772,12 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
             </div>
 
             {/* Limitations & Disclaimers */}
-            <div className="p-4 bg-[#FFFBEB] border border-[#FDE68A] rounded-xl text-xs text-[#111318] space-y-2">
-              <div className="font-bold text-[#B45309] uppercase tracking-wider text-[10px] font-mono flex items-center gap-1.5">
-                <AlertTriangle className="w-4 h-4 text-[#B45309]" />
+            <div className="p-4 bg-[#FFFDF5] border border-[#FEEBB5] rounded-xl text-xs text-[#163829] space-y-2">
+              <div className="font-bold text-[#B8860B] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                <AlertTriangle className="w-4 h-4 text-[#B8860B]" />
                 <span>Enterprise Econometric Limitations &amp; Causal Attribution Disclaimer</span>
               </div>
-              <p className="text-[#6B7280] leading-relaxed text-[11px]">
+              <p className="text-[#737A74] leading-relaxed text-[11px]">
                 THE GROCER records point-in-time shelf listings across Philippine physical and digital supermarket channels.
                 While these observations provide empirical transparency on consumer-facing price structures, they do not directly observe commercial wholesale acquisition costs, confidential trade promotion allowances, or store-level sales velocities.
                 Consequently, users must avoid drawing causal conclusions regarding corporate profit margins or national inflation drivers without controlling for external commodity price shocks, packaging material shifts, and currency exchange fluctuations.
@@ -788,31 +788,31 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
       </div>
 
       {/* 5. METHODOLOGICAL STANDARDS & FORMULATIONS */}
-      <div className="bg-white p-6 rounded-xl border border-[#E8E9EC] shadow-card space-y-5">
-        <h3 className="text-xl font-bold text-[#111318] border-b border-[#F1F5F9] pb-4 tracking-tight">
+      <div className="bg-white p-6 rounded-xl border border-[#E3E6DF] shadow-card space-y-5 font-sans">
+        <h3 className="text-xl font-bold text-[#163829] border-b border-[#EEF0EA] pb-4 tracking-tight">
           Methodological Standards &amp; Mathematical Formulations
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed text-[#6B7280]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed text-[#737A74]">
           <div className="space-y-4">
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">1. Unit Normalization Standard</h4>
-              <p className="text-[#6B7280]">
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">1. Unit Normalization Standard</h4>
+              <p className="text-[#737A74]">
                 Toothpaste products in the Philippines are sold in net grams (g) or milliliters (ml), ranging from 40g travel tubes to 300g twin bundles.
-                All products are standardized to <strong className="text-[#111318] font-bold">₱ per 100 grams</strong> (or 100ml, under standard density assumptions).
+                All products are standardized to <strong className="text-[#163829] font-bold">₱ per 100 grams</strong> (or 100ml, under standard density assumptions).
                 <br />
-                <code className="bg-white text-[#0F5132] px-1.5 py-0.5 rounded-md font-mono text-[11px] border border-[#E8E9EC] inline-block mt-1 font-bold">
+                <code className="bg-white text-[#176B4D] px-1.5 py-0.5 rounded-md font-data text-[11px] border border-[#E3E6DF] inline-block mt-1 font-bold">
                   Unit Price = (Shelf Price / Total Net Quantity) × Standard Basis
                 </code>
               </p>
             </div>
 
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">2. Multipack &amp; Twin Pack Accounting</h4>
-              <p className="text-[#6B7280]">
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">2. Multipack &amp; Twin Pack Accounting</h4>
+              <p className="text-[#737A74]">
                 When a product is sold as a bundle (e.g., 2 x 150g tubes), the total sellable quantity is calculated as:
                 <br />
-                <code className="bg-white text-[#0F5132] px-1.5 py-0.5 rounded-md font-mono text-[11px] border border-[#E8E9EC] inline-block my-1 font-bold">
+                <code className="bg-white text-[#176B4D] px-1.5 py-0.5 rounded-md font-data text-[11px] border border-[#E3E6DF] inline-block my-1 font-bold">
                   Q_total = Multipack Units (N) × Net Content (Q)
                 </code>
                 <br />
@@ -820,13 +820,13 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               </p>
             </div>
 
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">3. Promotion &amp; Shelf Price Treatment</h4>
-              <p className="text-[#6B7280]">
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">3. Promotion &amp; Shelf Price Treatment</h4>
+              <p className="text-[#737A74]">
                 Both regular (SRP) and promotional shelf prices are recorded independently. Active unit pricing uses the currently observed shelf price.
                 The regular price is preserved to track promotional depth:
                 <br />
-                <code className="bg-white text-[#0F5132] px-1.5 py-0.5 rounded-md font-mono text-[11px] border border-[#E8E9EC] inline-block mt-1 font-bold">
+                <code className="bg-white text-[#176B4D] px-1.5 py-0.5 rounded-md font-data text-[11px] border border-[#E3E6DF] inline-block mt-1 font-bold">
                   Discount % = ((Regular Price - Shelf Price) / Regular Price) × 100
                 </code>
               </p>
@@ -834,12 +834,12 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
           </div>
 
           <div className="space-y-4">
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">4. Price Index Baseline (Base = 100)</h4>
-              <p className="text-[#6B7280]">
-                The <strong className="text-[#111318] font-bold">Price Index</strong> uses the current market median unit price as base 100:
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">4. Price Index Baseline (Base = 100)</h4>
+              <p className="text-[#737A74]">
+                The <strong className="text-[#163829] font-bold">Price Index</strong> uses the current market median unit price as base 100:
                 <br />
-                <code className="bg-white text-[#0F5132] px-1.5 py-0.5 rounded-md font-mono text-[11px] border border-[#E8E9EC] inline-block mt-1 font-bold">
+                <code className="bg-white text-[#176B4D] px-1.5 py-0.5 rounded-md font-data text-[11px] border border-[#E3E6DF] inline-block mt-1 font-bold">
                   Price Index = (Product Price per 100g / Market Median Price per 100g) × 100
                 </code>
                 <br />
@@ -847,17 +847,17 @@ export const DataMethodologyTab: React.FC<DataMethodologyTabProps> = ({
               </p>
             </div>
 
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">5. Multi-Criteria Value Score</h4>
-              <p className="text-[#6B7280]">
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">5. Multi-Criteria Value Score</h4>
+              <p className="text-[#737A74]">
                 A composite 0–100 score balancing unit price advantage (40%), customer satisfaction ratings (25%), active promotions (15%), and dental clinical actives such as fluoride, sensitivity relief, and whitening (20%).
               </p>
             </div>
 
-            <div className="p-4 bg-[#F8F9FB] border border-[#E8E9EC] rounded-xl space-y-1.5">
-              <h4 className="font-bold text-[#111318] text-sm">6. Brand Presence vs True Concentration</h4>
-              <p className="text-[#6B7280]">
-                Because commercial sales volumes are not publicly observable from store shelf audits, we strictly report the descriptive <strong className="text-[#111318] font-bold">Brand Presence Index</strong> (proportion of catalog SKUs).
+            <div className="p-4 bg-[#FAFAF7] border border-[#E3E6DF] rounded-xl space-y-1.5">
+              <h4 className="font-bold text-[#163829] text-sm">6. Brand Presence vs True Concentration</h4>
+              <p className="text-[#737A74]">
+                Because commercial sales volumes are not publicly observable from store shelf audits, we strictly report the descriptive <strong className="text-[#163829] font-bold">Brand Presence Index</strong> (proportion of catalog SKUs).
                 We explicitly avoid misleading HHI concentration claims.
               </p>
             </div>
